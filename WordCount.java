@@ -17,13 +17,13 @@ public class WordCount {
         String[] words = input.split("\\s+");
 
         for (String word : words) {
-            // Convert word to lowercase to treat uppercase and lowercase words as same
+            
             word = word.toLowerCase();
-            // Update word count in the map
+            
             wordCountMap.put(word, wordCountMap.getOrDefault(word, 0) + 1);
         }
 
-        // Display word count in the string
+     
         System.out.println("Word count in the string:");
         for (Map.Entry<String, Integer> entry : wordCountMap.entrySet()) {
             System.out.println(entry.getKey() + " - " + entry.getValue());
