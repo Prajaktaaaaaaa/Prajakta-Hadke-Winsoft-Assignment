@@ -18,11 +18,11 @@ public class MergeArrays {
         int j = 0;
         int k = 0;
 
-        // Move non-zero elements of X to the end
+        
         while (i >= 0 && X[i] == 0)
             i--;
 
-        // Merge X and Y
+        
         while (i >= 0 && j < n) {
             if (X[i] > Y[j]) {
                 X[k++] = Y[j++];
@@ -31,7 +31,7 @@ public class MergeArrays {
             }
         }
 
-        // If elements in Y[] are remaining, copy them to X[]
+        
         while (j < n) {
             X[k++] = Y[j++];
         }
