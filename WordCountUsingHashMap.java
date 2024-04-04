@@ -16,15 +16,15 @@ public class WordCountUsingHashMap {
     private static int countWords(String input) {
         HashMap<String, Integer> wordCountMap = new HashMap<>();
 
-        // Split the input string into words
+       
         String[] words = input.split("\\s+");
 
-        // Count the occurrences of each word
+        
         for (String word : words) {
             wordCountMap.put(word, wordCountMap.getOrDefault(word, 0) + 1);
         }
 
-        // Return the size of the word count map
+        
         return wordCountMap.size();
     }
 }
