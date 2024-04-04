@@ -1,113 +1,14 @@
-import java.util.HashMap;
-import java.util.Scanner;
+Q1. Merge two arrays by satisfying given constraints
+Given two sorted arrays X[] and Y[] of size m and n each where m >= n and X[] has exactly n vacant cells,
+ merge elements of Y[] in their correct position in array X[], i.e., merge (X, Y) by keeping the sorted order.
 
-public class WordCountUsingHashMap {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+For example,
 
-        System.out.print("Enter a string: ");
-        String input = scanner.nextLine();
-        int wordCount = countWords(input);
-        System.out.println("Number of unique words: " + wordCount);
+Input: X[] = { 0, 2, 0, 3, 0, 5, 6, 0, 0 }
+Y[] = { 1, 8, 9, 10, 15 } The vacant cells in X[] is represented by 0 
+Output: X[] = { 1, 2, 3, 5, 6, 8, 9, 10, 15 }
 
-        scanner.close();
-    }
-
-    private static int countWords(String input) {
-        HashMap<String, Integer> wordCountMap = new HashMap<>();
-
-        // Split the input string into words
-        String[] words = input.split("\\s+");
-
-        // Count the occurrences of each word
-        for (String word : words) {
-            wordCountMap.put(word, wordCountMap.getOrDefault(word, 0) + 1);
-        }
-
-        // Return the size of the word count map
-        return wordCountMap.size();
-    }
-}
-
-
-
-
-euuU1
-
-EUUU2:
-
-import java.util.HashMap;
-import java.util.Map;
-
-public class WordCount {
-    public static void main(String[] args) {
-        String inputString = "This is a sample string with some words. This string will be used to count the number of words.";
-        countWords(inputString);
-    }
-
-    public static void countWords(String input) {
-        if (input == null || input.isEmpty()) {
-            System.out.println("Input string is empty.");
-            return;
-        }
-
-        Map<String, Integer> wordCountMap = new HashMap<>();
-        String[] words = input.split("\\s+");
-
-        for (String word : words) {
-            // Convert word to lowercase to treat uppercase and lowercase words as same
-            word = word.toLowerCase();
-            // Update word count in the map
-            wordCountMap.put(word, wordCountMap.getOrDefault(word, 0) + 1);
-        }
-
-        // Display word count in the string
-        System.out.println("Word count in the string:");
-        for (Map.Entry<String, Integer> entry : wordCountMap.entrySet()) {
-            System.out.println(entry.getKey() + " - " + entry.getValue());
-        }
-    }
-}
-
-*************************************
-Q3 
-
-
-import java.util.HashMap;
-import java.util.Scanner;
-
-public class WordCountUsingHashMap {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.print("Enter a string: ");
-        String input = scanner.nextLine();
-        int wordCount = countWords(input);
-        System.out.println("Number of unique words: " + wordCount);
-
-        scanner.close();
-    }
-
-    private static int countWords(String input) {
-        HashMap<String, Integer> wordCountMap = new HashMap<>();
-
-        // Split the input string into words
-        String[] words = input.split("\\s+");
-
-        // Count the occurrences of each word
-        for (String word : words) {
-            wordCountMap.put(word, wordCountMap.getOrDefault(word, 0) + 1);
-        }
-
-        // Return the size of the word count map
-        return wordCountMap.size();
-    }
-}
-
-
-***************************************
-
-Q1
+Solution:
 
 import java.util.Arrays;
 
@@ -149,47 +50,20 @@ public class MergeArrays {
     }
 }
 
+**************************************
 
+Q2. Find maximum sum path involving elements of given arrays
+Given two sorted arrays of integers, find a maximum sum path involving elements of both arrays whose sum is maximum. 
+We can start from either array, but we can switch between arrays only through its common elements.
 
-*******************************************
-Q4
+For example,
 
-import java.util.HashMap;
-import java.util.Map;
+Input: X = { 3, 6, 7, 8, 10, 12, 15, 18, 100 }
+Y = { 1, 2, 3, 5, 7, 9, 10, 11, 15, 16, 18, 25, 50 }  
+The maximum sum path is: 1 —> 2 —> 3 —> 6 —> 7 —> 9 —> 10 —> 12 —> 15 —> 16 —> 18 —> 100 
+The maximum sum is 199
 
-public class DuplicateCharacters {
-    public static void main(String[] args) {
-        String inputString = "programming";
-
-        findDuplicateCharacters(inputString);
-    }
-
-    public static void findDuplicateCharacters(String str) {
-        // Create a HashMap to store character frequencies
-        Map<Character, Integer> charFrequencyMap = new HashMap<>();
-
-        // Convert the string to character array
-        char[] charArray = str.toCharArray();
-
-        // Iterate through the character array and update character frequencies
-        for (char ch : charArray) {
-            // Update the frequency of the character in the map
-            charFrequencyMap.put(ch, charFrequencyMap.getOrDefault(ch, 0) + 1);
-        }
-
-        // Print characters with frequency greater than 1
-        System.out.println("Duplicate characters in the string:");
-        for (Map.Entry<Character, Integer> entry : charFrequencyMap.entrySet()) {
-            if (entry.getValue() > 1) {
-                System.out.println(entry.getKey() + " - " + entry.getValue());
-            }
-        }
-    }
-}
-
-
-***************************************
-Q2
+Solution:
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -272,6 +146,78 @@ public class MaxSumPath {
     }
 }
 
+*************************************
+Q3. Write a Java Program to count the number of words in a string using HashMap.
+
+Solution:
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class WordCountUsingHashMap {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+        int wordCount = countWords(input);
+        System.out.println("Number of unique words: " + wordCount);
+
+        scanner.close();
+    }
+
+    private static int countWords(String input) {
+        HashMap<String, Integer> wordCountMap = new HashMap<>();
+
+        // Split the input string into words
+        String[] words = input.split("\\s+");
+
+        // Count the occurrences of each word
+        for (String word : words) {
+            wordCountMap.put(word, wordCountMap.getOrDefault(word, 0) + 1);
+        }
+
+        // Return the size of the word count map
+        return wordCountMap.size();
+    }
+}
 
 
+*******************************************
+Q4. Write a Java Program to find the duplicate characters in a string.
+
+Solution:
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class DuplicateCharacters {
+    public static void main(String[] args) {
+        String inputString = "programming";
+
+        findDuplicateCharacters(inputString);
+    }
+
+    public static void findDuplicateCharacters(String str) {
+        // Create a HashMap to store character frequencies
+        Map<Character, Integer> charFrequencyMap = new HashMap<>();
+
+        // Convert the string to character array
+        char[] charArray = str.toCharArray();
+
+        // Iterate through the character array and update character frequencies
+        for (char ch : charArray) {
+            // Update the frequency of the character in the map
+            charFrequencyMap.put(ch, charFrequencyMap.getOrDefault(ch, 0) + 1);
+        }
+
+        // Print characters with frequency greater than 1
+        System.out.println("Duplicate characters in the string:");
+        for (Map.Entry<Character, Integer> entry : charFrequencyMap.entrySet()) {
+            if (entry.getValue() > 1) {
+                System.out.println(entry.getKey() + " - " + entry.getValue());
+            }
+        }
+    }
+}
 
